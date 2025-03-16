@@ -1,0 +1,382 @@
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-20">
+        <!-- Floating Elements -->
+        <div class="services-floating-element camera">
+            <i class="fas fa-camera"></i>
+        </div>
+        <div class="services-floating-element lens">
+            <i class="fas fa-circle"></i>
+        </div>
+
+        <!-- Add this just before the services grid -->
+       
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">OUR SERVICES</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-6">
+                    Professional Photography Services
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Discover our wide range of professional photography services tailored to capture your special moments with excellence and creativity.
+                </p>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <!-- Services Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="service-filter-btn active" data-filter="all">All Services</button>
+                <button class="service-filter-btn" data-filter="portrait">Portrait</button>
+                <button class="service-filter-btn" data-filter="event">Events</button>
+                <button class="service-filter-btn" data-filter="commercial">Commercial</button>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid">
+                <!-- Portrait Photography (existing card) -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.1" data-category="portrait">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b" 
+                             alt="Portrait Photography" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-playfair text-white font-bold">Portrait Photography</h3>
+                            <p class="text-yellow-400">Starting at $199</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Individual Portraits
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Family Photography
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Couple Shoots
+                            </li>
+                        </ul>
+                        <button class="service-btn mt-6">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drone Aerial Photography -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.2" data-category="commercial">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e" 
+                             alt="Drone Photography" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-playfair text-white font-bold">Drone Photography</h3>
+                            <p class="text-yellow-400">Starting at $299</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Aerial Event Coverage
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Real Estate Aerial Views
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Landscape Aerial Photography
+                            </li>
+                        </ul>
+                        <button class="service-btn mt-6">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Coverage -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.3" data-category="event">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" 
+                             alt="Event Photography" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-playfair text-white font-bold">Event Coverage</h3>
+                            <p class="text-yellow-400">Starting at $499</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Wedding Photography
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Corporate Events
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Party Coverage
+                            </li>
+                        </ul>
+                        <button class="service-btn mt-6">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Commercial Photography -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.4" data-category="commercial">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <img src="https://images.unsplash.com/photo-1589642380614-4a8c2147b857" 
+                             alt="Commercial Photography" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-playfair text-white font-bold">Commercial Photography</h3>
+                            <p class="text-yellow-400">Starting at $399</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Product Photography
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Branding Shoots
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Marketing Content
+                            </li>
+                        </ul>
+                        <button class="service-btn mt-6">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Editing & Retouching -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.5" data-category="commercial">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb" 
+                             alt="Photo Editing" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-playfair text-white font-bold">Editing & Retouching</h3>
+                            <p class="text-yellow-400">Starting at $99</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Professional Retouching
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Color Correction
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-400 mr-3"></i>
+                                Photo Manipulation
+                            </li>
+                        </ul>
+                        <button class="service-btn mt-6">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="service-card group reveal-on-scroll" data-delay="0.6" data-category="all">
+                    <div class="relative overflow-hidden rounded-t-xl bg-yellow-400 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-star text-6xl text-white mb-4"></i>
+                            <h3 class="text-2xl font-playfair text-white font-bold">Custom Package</h3>
+                            <p class="text-white/90">Tailored to Your Needs</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl">
+                        <p class="text-gray-600 mb-6">
+                            Let us create a custom photography package that perfectly matches your requirements and vision.
+                        </p>
+                        <button class="service-btn">
+                            Contact Us
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Comparison -->
+            <div class="mt-20 text-center reveal-on-scroll" data-delay="0.7">
+                <button class="compare-packages-btn group">
+                    <span class="relative z-10">Compare All Packages</span>
+                    <i class="fas fa-table ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    \
+
+
+
+
+
+     <!-- Blog Card 4 -->
+     <article class="blog-card group" data-aos="fade-up">
+        <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+            <!-- Blog Image -->
+            <div class="relative h-64 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" 
+                     alt="Camera Gear Guide" 
+                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                    Gear Guide
+                </span>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="p-6">
+                <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-calendar"></i>
+                        March 8, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock"></i>
+                        7 min read
+                    </span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                    Essential Camera Gear for Professional Photography
+                </h3>
+
+                <p class="text-gray-400 mb-6 line-clamp-3">
+                    Discover the must-have camera equipment for professional photography. From cameras to lenses and accessories...
+                </p>
+
+                <a href="#" class="blog-read-more">
+                    Read More
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Blog Card 5 -->
+    <article class="blog-card group" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+            <!-- Blog Image -->
+            <div class="relative h-64 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1472653431158-6364773b2a56" 
+                     alt="Event Photography Guide" 
+                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                    Event Tips
+                </span>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="p-6">
+                <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-calendar"></i>
+                        March 5, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock"></i>
+                        5 min read
+                    </span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                    Event Photography: From Planning to Execution
+                </h3>
+
+                <p class="text-gray-400 mb-6 line-clamp-3">
+                    A comprehensive guide to event photography. Learn how to plan, coordinate, and capture memorable moments...
+                </p>
+
+                <a href="#" class="blog-read-more">
+                    Read More
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Blog Card 6 -->
+    <article class="blog-card group" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+            <!-- Blog Image -->
+            <div class="relative h-64 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552" 
+                     alt="Photo Editing Tips" 
+                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                    Editing Tips
+                </span>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="p-6">
+                <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-calendar"></i>
+                        March 3, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock"></i>
+                        8 min read
+                    </span>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                    Advanced Photo Editing Techniques for Professionals
+                </h3>
+
+                <p class="text-gray-400 mb-6 line-clamp-3">
+                    Take your photo editing skills to the next level with advanced techniques. Learn color grading, retouching...
+                </p>
+
+                <a href="#" class="blog-read-more">
+                    Read More
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </article>

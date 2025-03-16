@@ -1,0 +1,68 @@
+/* Category Pills */
+.category-pill {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-pill:hover {
+    background: rgba(251, 191, 36, 0.2);
+    border-color: rgba(251, 191, 36, 0.4);
+    transform: translateY(-2px);
+}
+
+.category-pill.active {
+    background: linear-gradient(45deg, #FBBF24, #F59E0B);
+    border-color: transparent;
+    color: black;
+}
+
+/* Firefly Animation */
+.firefly {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(251, 191, 36, 0.5);
+    filter: blur(1px);
+    animation: firefly 6s ease-in-out infinite;
+}
+
+@keyframes firefly {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(100px, -100px);
+        opacity: 1;
+    }
+}
+
+/* Animation for background elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .category-pill {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DS Studio</title>
+    
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Add your tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#4a4a4a',
+                        yellow: {
+                            400: '#FBBF24',
+                        },
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Add these lines to the head section -->
+    <link rel="stylesheet" href="../css/gallary.css">
+    <script src="../js/about.js" defer></script>
+    <style>
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #FBBF24;
+            border-radius: 25px;
+            color: #FBBF24;
+            background: transparent;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: #FBBF24;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #FBBF24;
+            color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+        }
+
+        .gallery-item img {
+            transform-origin: center;
+            backface-visibility: hidden;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .lightbox.active .lightbox-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Filter button animations */
+        .filter-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FBBF24;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .filter-btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center transform transition-transform group-hover:rotate-12">
+                        <i class="fas fa-camera text-black text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-playfair font-bold text-white leading-none">DS<span class="text-yellow-400">Studio</span></span>
+                        <span class="text-xs text-white/70">Your Photography Partner</span>
+                    </div>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu lg:flex hidden">
+                    <a href="../index.html#home" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="About.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="../index.html#services" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Services</span>
+                    </a>
+                    <a href="../index.html#gallery" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Gallery</span>
+                    </a>
+                    <a href="../index.html#blogs" class="nav-link">Blog</a>
+                    <a href="../index.html#contact" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Contact</span>
+                    </a>
+                    <a href="../index.html#book" class="nav-cta group">
+                        <span class="nav-cta-content">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav fixed top-20 left-0 w-full bg-black/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Home</a>
+                <a href="#about" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">About</a>
+                <a href="#services" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Services</a>
+                <a href="pages/Gallery.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Gallery</a>
+                <a href="#blogs" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Blog</a>
+                <a href="#contact" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Contact</a>
+                <a href="#book" class="mobile-nav-link bg-yellow-400 text-black hover:bg-yellow-500 py-2 px-4 rounded-lg text-center transition-colors">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <main class="pt-20 bg-gray-900 min-h-screen">
+        <!-- Gallery Header -->
+        <div class="gallery-header">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-6xl font-playfair font-bold text-white mb-4" data-aos="fade-up">
+                    Our Gallery
+                </h1>
+                <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Explore our diverse collection of photography
+                </p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="portraits">Portraits</button>
+                    <button class="filter-btn" data-category="drone">Drone Shots</button>
+                    <button class="filter-btn" data-category="events">Events</button>
+                    <button class="filter-btn" data-category="nature">Nature</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Grid Container -->
+        <div class="container mx-auto">
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="300">
+                <!-- Gallery items will be dynamically added here -->
+                <div class="gallery-item" data-category="portraits">
+                    <img src="https://images.pexels.com/photos/1154059/pexels-photo-1154059.jpeg" alt="Portrait Photography" class="w-full h-80 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="https://portraitphotoawards.net/imagecache/i600/photos/5714/martadankiewicz_8439_1636456841.JPG" alt="Portrait Photography" class="w-full h-80 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="https://img.freepik.com/free-photo/fashion-portrait-stylish-woman-colorful-print-long-sleeve-top-pink-shorts-beach-tropical-background_343596-1039.jpg" alt="Portrait Photography" class="w-full h-80 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                </div>
+                <div class="gallery-item" data-category="drone">
+                    <img src="https://www.shutterstock.com/image-photo/colombosri-lanka-december-05-2018-600nw-1444012382.jpg" alt="Drone Photography" class="w-full h-80 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox hidden">
+            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="Gallery Image">
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

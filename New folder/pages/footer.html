@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Studio</title>
+    
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for scroll animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Add your tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#4a4a4a',
+                        yellow: {
+                            400: '#FBBF24',
+                        },
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins">
+
+
+     
+   <!-- Footer Section -->
+   <footer class="footer relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+            <div class="footer-particles"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="container mx-auto px-4 pt-20 pb-10 relative z-10">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Brand Column -->
+                <div class="footer-column space-y-6">
+                    <div class="footer-logo">
+                        <img src="../asset/image/logo.jpeg" alt="DS Studio" class="h-12">DS Studio 
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Capturing life's precious moments with artistic vision and professional excellence.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>NO.29, New Laggala,Pallegama,Matale,Sri Lanka.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>070 555 3000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@dsstudio.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Divider -->
+            <div class="footer-divider my-10"></div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-sm">
+                        © <span class="copyright-year"></span> DS Studio. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <a href="#privacy" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Privacy Policy
+                        </a>
+                        <a href="#terms" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Terms of Service
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add the wave element -->
+        <div class="footer-wave"></div>
+    </footer>
+
+    <!-- Scripts -->
+    
+    <script src="../js/footer.js"></script>
+
+   
+
+    
+
+
+
+</body>
+</html>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  

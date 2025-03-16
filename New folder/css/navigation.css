@@ -1,0 +1,239 @@
+/* Navigation Container */
+.nav-container {
+    position: relative;
+    width: 100%;
+    z-index: 50;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Link Hover Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FBBF24;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.nav-cta {
+    position: relative;
+    padding: 0.75rem 1.75rem;
+    background: linear-gradient(45deg, #FBBF24, #F59E0B);
+    color: #000;
+    font-weight: 600;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+}
+
+/* CTA Button Content */
+.nav-cta-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* CTA Button Shine Effect */
+.nav-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 2;
+}
+
+/* CTA Button Hover Effects */
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(251, 191, 36, 0.4),
+        0 0 20px rgba(251, 191, 36, 0.2);
+    background: linear-gradient(45deg, #F59E0B, #FBBF24);
+}
+
+.nav-cta:hover::before {
+    transform: translateX(100%);
+}
+
+.nav-cta:hover i {
+    transform: translateX(4px);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    z-index: 60;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active span:first-child {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.mobile-menu-btn.active span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    z-index: 50;
+    height: calc(100vh - 5rem);
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-link {
+    position: relative;
+    font-size: 1.125rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav.active .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delay for menu items */
+.mobile-nav .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav .mobile-nav-link:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav .mobile-nav-link:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav .mobile-nav-link:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav .mobile-nav-link:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav .mobile-nav-link:nth-child(6) { transition-delay: 0.35s; }
+.mobile-nav .mobile-nav-link:nth-child(7) { transition-delay: 0.4s; }
+
+/* Book Now button in mobile menu */
+.mobile-nav-link[href="#book"] {
+    background: #FBBF24;
+    color: black !important;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link[href="#book"]:hover {
+    background: #F59E0B;
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-nav, 
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Scrolled Header State */
+.header-scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-scrolled .nav-link {
+    color: #1a1a1a;
+}
+
+.header-scrolled .nav-cta {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    color: white;
+}
+
+/* Active Link State */
+.nav-link.active {
+    color: #FBBF24;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Logo Animation */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: #FBBF24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-icon {
+    transform: rotate(15deg);
+}
+

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Studio</title>
+    
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for scroll animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Add your tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#4a4a4a',
+                        yellow: {
+                            400: '#FBBF24',
+                        },
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css\styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center transform transition-transform group-hover:rotate-12">
+                        <i class="fas fa-camera text-black text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-playfair font-bold text-white leading-none">DS<span class="text-yellow-400">Studio</span></span>
+                        <span class="text-xs text-white/70">Your Photography Partner</span>
+                    </div>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu lg:flex hidden">
+                    <a href="#home" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="pages/About.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="#services" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Services</span>
+                    </a>
+                    <a href="pages/Gallery.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Gallery</span>
+                    </a>
+                    <a href="#blogs" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Contact</span>
+                    </a>
+                    <a href="#book" class="nav-cta group">
+                        <span class="nav-cta-content">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav fixed top-20 left-0 w-full bg-black/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Home</a>
+                <a href="#about" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">About</a>
+                <a href="#services" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Services</a>
+                <a href="pages/Gallery.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Gallery</a>
+                <a href="#blogs" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Blog</a>
+                <a href="#contact" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Contact</a>
+                <a href="#book" class="mobile-nav-link bg-yellow-400 text-black hover:bg-yellow-500 py-2 px-4 rounded-lg text-center transition-colors">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen overflow-hidden">
+        <!-- Background with Parallax -->
+        <div class="absolute inset-0 z-0 parallax-bg">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3" 
+                 alt="Hero Background" 
+                 class="w-full h-full object-cover transform scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 z-1 floating-elements">
+            <div class="floating-element" style="--delay: 0s">
+                <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03" 
+                     alt="Floating Image 1" 
+                     class="rounded-lg shadow-2xl">
+            </div>
+            <div class="floating-element" style="--delay: 2s">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" 
+                     alt="Floating Image 2" 
+                     class="rounded-lg shadow-2xl">
+            </div>
+            <div class="floating-element" style="--delay: 4s">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" 
+                     alt="Floating Image 3" 
+                     class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
+            <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-center mb-6">
+                <span class="block reveal-text">Capturing Life's</span>
+                <span class="block reveal-text" style="--delay: 0.2s">Beautiful Moments</span>
+            </h1>
+
+            <p class="reveal-text text-xl md:text-2xl text-center mb-8 max-w-2xl" style="--delay: 0.4s">
+                Professional photography services to preserve your precious memories forever
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 reveal-text" style="--delay: 0.6s">
+                <button class="hero-btn primary group relative overflow-hidden">
+                    <span class="relative z-10">Book a Session</span>
+                    <div class="absolute inset-0 bg-yellow-400 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="absolute right-4 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </button>
+                <button class="hero-btn secondary group relative overflow-hidden">
+                    <span class="relative z-10">View Gallery</span>
+                    <div class="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div class="absolute right-4 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500">
+                        <i class="fas fa-images"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-scroll">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">ABOUT US</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-6">
+                    Capturing Your Perfect Moments
+                </h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Images -->
+                <div class="relative reveal-on-scroll" data-delay="0.2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="overflow-hidden rounded-lg shadow-xl image-grid-item">
+                                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b" 
+                                     alt="Wedding Photography" 
+                                     class="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-xl image-grid-item">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552  " 
+                                     alt="Portrait Photography" 
+                                     class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                            </div>
+                        </div>
+                        <div class="space-y-4 mt-8">
+                            <div class="overflow-hidden rounded-lg shadow-xl image-grid-item">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552" 
+                                     alt="Event Photography" 
+                                     class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-xl image-grid-item">
+                                <img src="https://images.unsplash.com/photo-1472653431158-6364773b2a56" 
+                                     alt="Nature Photography" 
+                                     class="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Badge -->
+                    <div class="absolute -bottom-10 -right-10 bg-yellow-400 text-black p-6 rounded-full shadow-xl hidden lg:block experience-badge">
+                        <div class="text-center relative">
+                            <div class="absolute inset-0 bg-yellow-400 rounded-full animate-ping opacity-25"></div>
+                            <span class="text-3xl font-bold block counter-value" data-target="5">0+</span>
+                            <span class="text-sm">Years of<br>Experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Content -->
+                <div class="lg:pl-12 reveal-on-scroll" data-delay="0.4">
+                    <h3 class="text-2xl font-playfair font-bold text-gray-900 mb-6">
+                        We create timeless memories through our lens
+                    </h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        With over a decade of experience in professional photography, we've mastered the art of capturing life's most precious moments. Our passion lies in transforming fleeting instances into eternal memories that you'll cherish forever.
+                    </p>
+                    
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 gap-6 mb-8 stat-grid">
+                        <div class="stat-card" data-aos="fade-up">
+                            <span class="text-3xl font-bold text-yellow-400 block counter-value" data-target="1500">0+</span>
+                            <span class="text-gray-600">Happy Clients</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-yellow-400 block counter-value" data-target="300"">0+</span>
+                            <span class="text-gray-600">Events Covered</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-yellow-400 block counter-value" data-target="10">0+</span>
+                            <span class="text-gray-600">Awards Won</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-yellow-400 block counter-value" data-target="1">0+</span>
+                            <span class="text-gray-600">Studio Locations</span>
+                        </div>
+                    </div>
+
+                    <!-- Add this after the stats items -->
+                    <a href="pages/About.html" class="nav-link">
+                    <div class="stats-learn-more-container">
+                        <button class="stats-learn-more">
+                            <span >
+                                <span > Learn More</span>
+                                <span class="button-icon">
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                            </span>
+                            <span class="button-shine"></span>
+                        </button>
+                    </div>
+                    </a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+            <div class="absolute inset-0 opacity-20">
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-20 reveal-on-scroll">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider uppercase text-sm">Our Services</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-400">
+                    Capturing Moments in Time
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Discover our range of professional photography services designed to preserve your precious memories
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-20">
+                <!-- Portrait Photography -->
+                <div class="service-card-modern group" data-aos="fade-up">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1623091411395-09e79fdbfcf5" 
+                                 alt="Portrait Photography Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-camera-retro text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Portrait Photography</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Professional portrait sessions that capture the essence of individuals, couples, and families in stunning detail.
+                            </p>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Professional Studio Setup</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Multiple Outfit Changes</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Digital & Print Options</span>
+                                </li>
+                            </ul>
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Book Now</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drone Aerial Shots -->
+                <div class="service-card-modern group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384" 
+                                 alt="Drone Photography Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-drone text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Drone Aerial Shots</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Breathtaking aerial photography capturing stunning perspectives for events and real estate projects.
+                            </p>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>4K Ultra HD Footage</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Real Estate Aerial Tours</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Event Aerial Coverage</span>
+                                </li>
+                            </ul>
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Get Quote</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Coverage -->
+                <div class="service-card-modern group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" 
+                                 alt="Event Coverage Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-glass-cheers text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Event Coverage</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Professional photography for weddings, corporate events, and special celebrations.
+                            </p>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Wedding Photography</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Corporate Events</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Party Coverage</span>
+                                </li>
+                            </ul>
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Book Event</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Photography -->
+                <div class="service-card-modern group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1472653431158-6364773b2a56" 
+                                 alt="Commercial Photography Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-shopping-bag text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Commercial Photography</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Professional product and branding photography for businesses.
+                            </p>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Product Photography</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Brand Shoots</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Marketing Content</span>
+                                </li>
+                            </ul>
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Get Started</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editing & Retouching -->
+                <div class="service-card-modern group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" 
+                                 alt="Editing Services Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-magic text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Editing & Retouching</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Professional photo editing and enhancement services to perfect your images.
+                            </p>
+                            <br><br><br><br>
+
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Learn More</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Drone Aerial Shots -->
+                 <div class="service-card-modern group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-full bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500">
+                        <!-- Service Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384" 
+                                 alt="Drone Photography Background"
+                                 class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/90"></div>
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Service Icon -->
+                            <div class="service-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-drone text-2xl text-black"></i>
+                                </div>
+                            </div>
+
+                            <!-- Service Content -->
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors">Drone Aerial Shots</h3>
+                            <p class="text-gray-400 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                                Breathtaking aerial photography capturing stunning perspectives for events and real estate projects.
+                            </p>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>4K Ultra HD Footage</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Real Estate Aerial Tours</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-sm text-gray-400">
+                                    <span class="w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center">
+                                        <i class="fas fa-check text-yellow-400"></i>
+                                    </span>
+                                    <span>Event Aerial Coverage</span>
+                                </li>
+                            </ul>
+
+                            <!-- Action Button -->
+                            <button class="service-btn w-full py-4 px-6 rounded-xl bg-yellow-400 text-black font-semibold relative overflow-hidden group">
+                                <span class="relative z-10">Get Quote</span>
+                                <div class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Services Section -->
+    <section class="services-features py-20 bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+            <div class="fireflies">
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+                <div class="firefly"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Why Choose Our Services?</h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full mb-8"></div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Professional Excellence -->
+                <div class="feature-card group" data-aos="fade-up">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-award text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Professional Excellence</h3>
+                        <p class="text-gray-400 mb-6">Award-winning photographers with years of experience in capturing perfect moments.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Certified Professionals</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Industry Recognition</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Quality Assurance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Advanced Equipment -->
+                <div class="feature-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-camera text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Advanced Equipment</h3>
+                        <p class="text-gray-400 mb-6">State-of-the-art photography gear ensuring exceptional quality results.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Latest Technology</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>4K Video Capability</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Drone Photography</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Customer Satisfaction -->
+                <div class="feature-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-heart text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Customer Satisfaction</h3>
+                        <p class="text-gray-400 mb-6">Dedicated to exceeding expectations with personalized service.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Customized Packages</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Quick Turnaround</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>24/7 Support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20">
+        <!-- Pattern Overlay -->
+        <div class="gallery-pattern-overlay"></div>
+        
+        <!-- Main Content -->
+        <div class="gallery-container container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">OUR WORK</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-white mb-6">
+                    Featured Gallery
+                </h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Gallery Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="gallery-filter active" data-filter="all">
+                    All Projects
+                </button>
+                <button class="gallery-filter" data-filter="portraits">
+                    Portraits
+                </button>
+                <button class="gallery-filter" data-filter="events">
+                    Events
+                </button>
+                <button class="gallery-filter" data-filter="drone">
+                    Drone Shots
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Portrait Item -->
+                <div class="gallery-item" data-category="portraits">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b" alt="Portrait Photography">
+                        <div class="gallery-overlay">
+                            <h3>Elegant Portraits</h3>
+                            <p>Professional studio session</p>
+                            <div class="gallery-buttons">
+                                <button class="view-btn" aria-label="View Image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Item -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" alt="Wedding Photography">
+                        <div class="gallery-overlay">
+                            <h3>Wedding Moments</h3>
+                            <p>Capturing precious celebrations</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drone Shot Item -->
+                <div class="gallery-item" data-category="drone">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1506947411487-a56738267384" alt="Aerial Photography">
+                        <div class="gallery-overlay">
+                            <h3>Aerial Views</h3>
+                            <p>Stunning drone photography</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Item 2 -->
+                <div class="gallery-item" data-category="portraits">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Family Portrait">
+                        <div class="gallery-overlay">
+                            <h3>Family Portraits</h3>
+                            <p>Timeless family memories</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Item 2 -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1472653431158-6364773b2a56" alt="Corporate Event">
+                        <div class="gallery-overlay">
+                            <h3>Corporate Events</h3>
+                            <p>Professional event coverage</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drone Shot Item 2 -->
+                <div class="gallery-item" data-category="drone">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" alt="Drone Real Estate">
+                        <div class="gallery-overlay">
+                            <h3>Real Estate Aerial</h3>
+                            <p>Property from above</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portrait Item -->
+                <div class="gallery-item" data-category="portraits">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b" alt="Portrait Photography">
+                        <div class="gallery-overlay">
+                            <h3>Elegant Portraits</h3>
+                            <p>Professional studio session</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Item -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" alt="Wedding Photography">
+                        <div class="gallery-overlay">
+                            <h3>Wedding Moments</h3>
+                            <p>Capturing precious celebrations</p>
+                            <button class="view-btn" aria-label="View Image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="load-more">
+                    Load More
+                    <i class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+     <!-- Blog Section -->
+     <section id="blog" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">OUR BLOG</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-white mb-6">
+                    Photography Insights
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Discover the latest tips, tricks, and insights about photography and visual storytelling
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="blog-card group" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+                        <!-- Blog Image -->
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" 
+                                 alt="Drone Photography Tips" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                                Drone Tips
+                            </span>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-calendar"></i>
+                                    March 15, 2024
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-clock"></i>
+                                    5 min read
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                                Mastering Aerial Photography: Essential Drone Tips
+                            </h3>
+
+                            <p class="text-gray-400 mb-6 line-clamp-3">
+                                Discover the secrets to capturing stunning aerial photographs with your drone. From composition techniques to camera settings...
+                            </p>
+
+                            <a href="#" class="blog-read-more">
+                                Read More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+                        <!-- Blog Image -->
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b" 
+                                 alt="Portrait Photography Guide" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                                Portrait Tips
+                            </span>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-calendar"></i>
+                                    March 12, 2024
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-clock"></i>
+                                    4 min read
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                                The Art of Portrait Photography: Lighting Techniques
+                            </h3>
+
+                            <p class="text-gray-400 mb-6 line-clamp-3">
+                                Learn the essential lighting techniques that will elevate your portrait photography. From natural light to studio setups...
+                            </p>
+
+                            <a href="#" class="blog-read-more">
+                                Read More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-white/10">
+                        <!-- Blog Image -->
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" 
+                                 alt="Wedding Photography Tips" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <span class="absolute top-4 right-4 bg-yellow-400/90 text-black text-sm font-medium px-3 py-1 rounded-full">
+                                Wedding Tips
+                            </span>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-calendar"></i>
+                                    March 10, 2024
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-clock"></i>
+                                    6 min read
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                                Wedding Photography: Capturing Perfect Moments
+                            </h3>
+
+                            <p class="text-gray-400 mb-6 line-clamp-3">
+                                Master the art of wedding photography with our comprehensive guide. From preparation to reception, learn how to capture...
+                            </p>
+
+                            <a href="#" class="blog-read-more">
+                                Read More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+               
+            </div>
+
+            <!-- View All Posts Button -->
+            <div class="view-all-posts-container">
+                <button class="view-all-posts-btn group">
+                    <span class="view-all-posts-content">
+                        <span>View All Posts</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <span class="btn-shine"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative overflow-hidden">
+        <!-- Background Overlays -->
+        <div class="contact-pattern-overlay"></div>
+        <div class="contact-gradient-overlay"></div>
+        
+        <!-- Animated Elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">GET IN TOUCH</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-6">
+                    Let's Create Something Together
+                </h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Form -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 transform hover:scale-[1.02] transition-transform duration-300">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="form-group">
+                            <div class="floating-input-container">
+                                <input type="text" id="name" class="floating-input" placeholder=" " required>
+                                <label for="name" class="floating-label">Your Name</label>
+                                <div class="input-underline"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="floating-input-container">
+                                <input type="email" id="email" class="floating-input" placeholder=" " required>
+                                <label for="email" class="floating-label">Your Email</label>
+                                <div class="input-underline"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="floating-input-container">
+                                <input type="tel" id="phone" class="floating-input" placeholder=" " required>
+                                <label for="phone" class="floating-label">Phone Number</label>
+                                <div class="input-underline"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="floating-input-container">
+                                <textarea id="message" class="floating-input h-32" placeholder=" " required></textarea>
+                                <label for="message" class="floating-label">Your Message</label>
+                                <div class="input-underline"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="contact-submit-btn group">
+                            <span class="btn-content">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                            <span class="btn-shine"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Newsletter -->
+                <div class="space-y-12">
+                    <!-- Contact Information -->
+                    <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                        <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt text-yellow-400"></i>
+                                <span>NO.29, New Laggala,Pallegama,Matale,Sri Lanka.</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-phone text-yellow-400"></i>
+                                <span>070 555 3000</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope text-yellow-400"></i>
+                                <span>info@dsstudio.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+            <div class="footer-particles"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="container mx-auto px-4 pt-20 pb-10 relative z-10">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Brand Column -->
+                <div class="footer-column space-y-6">
+                    <div class="footer-logo">
+                        <img src="asset\image\logo.jpeg" alt="DS Studio" class="h-12">DS Studio 
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Capturing life's precious moments with artistic vision and professional excellence.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>NO.29, New Laggala,Pallegama,Matale,Sri Lanka.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>070 555 3000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@dsstudio.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Divider -->
+            <div class="footer-divider my-10"></div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 DS Studio. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <a href="#privacy" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Privacy Policy
+                        </a>
+                        <a href="#terms" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Terms of Service
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js\script.js"></script>
+    <script src="js\navigation.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+   
+</body>
+</html>

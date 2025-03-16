@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DS Studio</title>
+    
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/drone-insights.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins bg-black">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="../index.html" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center transform transition-transform group-hover:rotate-12">
+                        <i class="fas fa-camera text-black text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-playfair font-bold text-white leading-none">DS<span class="text-yellow-400">Studio</span></span>
+                        <span class="text-xs text-white/70">Your Photography Partner</span>
+                    </div>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transform transition-all duration-300"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu lg:flex hidden">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="About.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="../index.html#services" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Services</span>
+                    </a>
+                    <a href="Gallery.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Gallery</span>
+                    </a>
+                    <a href="Blog.html" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Blog</span>
+                    </a>
+                    <a href="../index.html#contact" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Contact</span>
+                    </a>
+                    <a href="../index.html#book" class="nav-cta group">
+                        <span class="nav-cta-content">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav fixed top-20 left-0 w-full bg-black/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 lg:hidden z-50">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Home</a>
+                <a href="About.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">About</a>
+                <a href="../index.html#services" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Services</a>
+                <a href="Gallery.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Gallery</a>
+                <a href="Blog.html" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Blog</a>
+                <a href="../index.html#contact" class="mobile-nav-link text-white hover:text-yellow-400 py-2 px-4 transition-colors">Contact</a>
+                <a href="../index.html#book" class="mobile-nav-link bg-yellow-400 text-black hover:bg-yellow-500 py-2 px-4 rounded-lg text-center transition-colors">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] pt-32 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://proedu.com/cdn/shop/articles/PRO_EDU_Photo_Courses_blog_article_titled_Behind_the_Lens_Photography-Fundamentals-20241456_x_816Photography-Fundamentals-PRO-EDU_a3eeecf0-5c37-4d94-bc5b-0c9ff072ab0a.jpg?v=1720542504&width=2048" alt="Background" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"></div>
+            <!-- Animated Overlay Pattern -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Blog Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-yellow-400 font-medium mb-4 block tracking-wider">OUR BLOG</span>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6">
+                    Photography Insights & Stories
+                </h1>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                    Explore our collection of photography tips, drone insights, and client 
+                    stories. Stay updated with the latest in photography and cinematography.
+                </p>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full mt-8"></div>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid Section -->
+    <section class="relative py-20">
+        <div class="container mx-auto px-4">
+            <!-- Featured Blog Post -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="relative overflow-hidden">
+                            <img src="https://s.studiobinder.com/wp-content/uploads/2020/02/Natural-Light-Photography-Techniques-and-Benefits-Explained-Featured.jpg" alt="Featured Blog" 
+                                 class="w-full h-[500px] object-cover transform hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-medium">
+                                    Featured
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-8 lg:pr-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-yellow-400">Photography Tips</span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-gray-400">5 min read</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-playfair font-bold text-white mb-4">
+                                The Art of Natural Light Photography
+                            </h2>
+                            <p class="text-gray-300 mb-6">
+                                Natural light photography is a powerful skill that allows photographers to harness the beauty of available light, creating authentic and visually stunning images without the need for artificial lighting. Mastering this art involves understanding the direction, quality, and intensity of light throughout the day—whether it's the soft, golden glow during sunrise and sunset or the harsh midday sun.
+                                <br>
+                                <br>
+                                Key techniques include using reflectors to bounce light, diffusers to soften shadows, and positioning subjects relative to the sun for flattering angles. Natural light enhances skin tones, adds depth, and brings out natural colors, making it ideal for portrait photography.
+                                <br>
+                                <br>
+                                Adapting to changing lighting conditions is essential for capturing mood and emotion in your shots. From window-lit indoor portraits to outdoor golden-hour masterpieces, mastering natural light photography empowers photographers to create dynamic, vibrant, and timeless images without relying on complex setups.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg" alt="Author" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="text-white font-medium">John Doe</h4>
+                                        <span class="text-gray-400 text-sm">March 15, 2024</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+     <!-- Blog Posts Grid Section -->
+    <section class="relative py-20">
+        <div class="container mx-auto px-4">
+            <!-- Featured Blog Post -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="relative overflow-hidden">
+                            <img src="https://ohmyfacts.com/wp-content/uploads/2024/09/25-facts-about-drones-1726045578.jpg" alt="Featured Blog" 
+                                 class="w-full h-[500px] object-cover transform hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute top-4 left-4">
+                                
+                            </div>
+                        </div>
+                        <div class="p-8 lg:pr-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-yellow-400">Drone Tips</span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-gray-400">5 min read</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-playfair font-bold text-white mb-4">
+                                Mastering Aerial Photography: Essential Drone Tips
+                            </h2>
+                            <p class="text-gray-300 mb-6">
+                                Aerial photography offers a breathtaking perspective, allowing photographers to capture landscapes, architecture, and events from a whole new angle. To master drone photography, understanding composition techniques is essential—use the rule of thirds, leading lines, and symmetry to create visually engaging shots. Experimenting with different altitudes and angles can reveal patterns and details that are invisible from the ground.
+                                <br>
+                                <br>
+                                Proper camera settings are also key. Set a low ISO to reduce noise, adjust the shutter speed to avoid motion blur, and use manual focus for sharper images. Shooting in RAW format gives you more flexibility in post-processing.
+                                <br>
+                                <br>
+                                Lighting is another crucial factor; golden hour (sunrise or sunset) often provides the best natural light for dramatic shadows and highlights. Always check weather conditions and follow legal regulations for safe flying. With practice and creativity, drone photography can unlock stunning new dimensions in your work.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg" alt="Author" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="text-white font-medium">John Doe</h4>
+                                        <span class="text-gray-400 text-sm">March 15, 2024</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+     <!-- Blog Posts Grid Section -->
+    <section class="relative py-20">
+        <div class="container mx-auto px-4">
+            <!-- Featured Blog Post -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="relative overflow-hidden">
+                            <img src="https://www.canoncreatorlab.ca/wp-content/uploads/2023/08/get-inspired-light-painting-1-scaled.jpg" alt="Featured Blog" 
+                                 class="w-full h-[500px] object-cover transform hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute top-4 left-4">
+                                
+                            </div>
+                        </div>
+                        <div class="p-8 lg:pr-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-yellow-400">Portrait Tips</span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-gray-400">5 min read</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-playfair font-bold text-white mb-4">
+                                The Art of Portrait Photography: Lighting Techniques
+                            </h2>
+                            <p class="text-gray-300 mb-6">
+                                Mastering lighting is essential for capturing compelling and professional-looking portraits. The quality, direction, and intensity of light can dramatically affect the mood, depth, and overall impact of your images. Natural light offers a soft, flattering effect, especially during the golden hour (shortly after sunrise or before sunset). You can also use reflectors or diffusers to control shadows and highlight your subject's best features.
+                                <br>
+                                <br>
+                                In a studio setting, artificial lighting provides more control and consistency. Techniques like Rembrandt lighting create dramatic shadows, while butterfly lighting—where light is placed directly above the subject—offers a more glamorous look. Three-point lighting, using a key light, fill light, and backlight, is a classic setup for balanced, professional portraits.
+                                <br>
+                                <br>
+                                Modifiers like softboxes, umbrellas, and grids help soften or focus light, allowing you to sculpt the subject's face and create mood-enhancing effects. Experimenting with these techniques will elevate your portrait photography to new creative heights.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg" alt="Author" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="text-white font-medium">John Doe</h4>
+                                        <span class="text-gray-400 text-sm">March 15, 2024</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+     <!-- Blog Posts Grid Section -->
+    <section class="relative py-20">
+        <div class="container mx-auto px-4">
+            <!-- Featured Blog Post -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-sm border border-white/10">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="relative overflow-hidden">
+                            <img src="https://www.fearlessphotographers.com/images/photogs/eliya-davide-cover-3402.jpg" alt="Featured Blog" 
+                                 class="w-full h-[500px] object-cover transform hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute top-4 left-4">
+                                
+                            </div>
+                        </div>
+                        <div class="p-8 lg:pr-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-yellow-400">Wedding Tips</span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-gray-400">5 min read</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-playfair font-bold text-white mb-4">
+                                Wedding Photography: Capturing Perfect Moments
+                            </h2>
+                            <p class="text-gray-300 mb-6">
+                                Wedding photography is all about telling a couple's love story through candid moments, emotional expressions, and beautiful details. Mastering this art requires a mix of technical skill, creativity, and careful preparation. Before the big day, it's essential to meet with the couple to understand their vision, preferred style, and important moments they want captured.
+                                <br>
+                                <br>
+                                On the wedding day, focus on documenting key events such as the first look, vows, and first dance while also capturing candid moments—tears of joy, laughter, and heartfelt interactions. Composition techniques like framing and leading lines help draw attention to the couple, while natural light or soft flashes create flattering effects.
+                                <br>
+                                <br>
+                                It's also vital to anticipate moments, stay discreet, and adapt to changing lighting conditions, whether in bright outdoor ceremonies or dimly lit receptions. Post-processing enhances the final images, ensuring every photo reflects the romance, joy, and beauty of the day.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg" alt="Author" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="text-white font-medium">John Doe</h4>
+                                        <span class="text-gray-400 text-sm">March 15, 2024</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->    
+    <script src="../js/script.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/drone-insights.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Load Footer
+        fetch('../pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+
+        document.querySelector('.blog-read-more').addEventListener('click', function(event) {
+            event.preventDefault();
+            const moreContent = document.getElementById('more-content');
+            moreContent.classList.toggle('hidden');
+            });
+    </script>
+</body>
+</html>
